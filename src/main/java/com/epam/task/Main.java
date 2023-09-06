@@ -6,11 +6,14 @@ import com.epam.task.model.Order;
 import com.epam.task.model.Product;
 
 import java.time.LocalDate;
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -19,8 +22,8 @@ public class Main {
     public static void main(String[] args) {
 
         Category categoryFood = new Category(1L, "Food");
-        Category categoryElectronics = new Category(1L, "Electronics");
-        Category categoryHardware = new Category(1L, "Hardware");
+        Category categoryElectronics = new Category(2L, "Electronics");
+        Category categoryHardware = new Category(3L, "Hardware");
 
 
         Customer customer1 = new Customer(1L, "Harshal Shinde");
@@ -44,10 +47,8 @@ public class Main {
         Order order4 = new Order(4L, customer4, Arrays.asList(productSugar,productMobile,productScrew), LocalDate.now());
 
 
+
         Map<Category, List<String>> groupCustomersByCategory = groupCustomersByCategory(Arrays.asList(order1, order2, order3, order4));
-
-
-
 
     }
 
@@ -55,11 +56,11 @@ public class Main {
 
     public static Map<Category, List<String>> groupCustomersByCategory(List<Order> orders) {
 
-        // return orders.stream().map(Order::getProducts).flatMap(Collection::stream).map(Product::getCategory).collect(Collectors.groupingBy(Function.identity(), Order::getCustomer ))
+       return orders.stream().flatMap(order -> order.getProducts().stream()
+                .map(product -> new AbstractMap.SimpleEntry<>(product.getCategory(), order.getCustomer()
+                        .getCustomerName())))
+                .collect(Collectors.groupingBy(AbstractMap.SimpleEntry::getKey, Collectors.mapping(AbstractMap.SimpleEntry::getValue, Collectors.collectingAndThen(Collectors.toSet(), ArrayList::new))));
 
-      //  return orders.stream().map(Order::getProducts).flatMap(Collection::stream).collect(Collectors.groupingBy(Product::getCategory))
-        // Your code here
-        return null;
     }
 
 

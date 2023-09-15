@@ -25,7 +25,6 @@ public class Main {
         Category categoryElectronics = new Category(2L, "Electronics");
         Category categoryHardware = new Category(3L, "Hardware");
 
-
         Customer customer1 = new Customer(1L, "Harshal Shinde");
         Customer customer2 = new Customer(2L, "Pranav Patil");
         Customer customer3 = new Customer(3L, "Somesh R");
@@ -37,9 +36,6 @@ public class Main {
         Product productLaptop = new Product(4L, "Laptop", categoryElectronics);
         Product productScrew = new Product(5L, "Screw Driver", categoryHardware);
         Product productWrench = new Product(6L, "Wrench", categoryHardware);
-
-
-
 
         Order order1 = new Order(1L, customer1, Arrays.asList(productMilk,productMobile,productScrew), LocalDate.now());
         Order order2 = new Order(2L, customer2, Arrays.asList(productSugar,productLaptop,productWrench), LocalDate.now());

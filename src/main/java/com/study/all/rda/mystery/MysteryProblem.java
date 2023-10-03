@@ -26,6 +26,7 @@ public class MysteryProblem {
             return 0;
         }
 
+
         int mystery1 = Mystery(x - A[low], low, high, A);
         int mystery2 = Mystery(x, low + 1, high, A);
 

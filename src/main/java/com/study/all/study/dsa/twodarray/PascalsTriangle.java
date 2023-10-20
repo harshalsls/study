@@ -15,13 +15,14 @@ public class PascalsTriangle {
             List<Integer> list = new ArrayList<>(i);
             list.add(1);
             for (int j = 1; j < i; j++) {
-               list.add(output.get(i-1).get(j-1) + output.get(i-1).get(j));
+                list.add(output.get(i-1).get(j-1) + output.get(i-1).get(j));
             }
-            list.add(1);
+            if(i!=0) {
+                list.add(1);
+            }
             output.add(list);
         }
         return output;
-
     }
 
 

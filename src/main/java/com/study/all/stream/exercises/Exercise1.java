@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.Comparator.comparingInt;
+
 /**
  * 
  * @author Binnur Kurt <binnur.kurt@gmail.com>
@@ -44,6 +46,10 @@ public class Exercise1 {
                     		     )
                         );
         dirMovCounts.forEach((name,count) -> System.out.printf("%20s: %3d\n",name,count));
+
 	}
+
+
+
 
 }

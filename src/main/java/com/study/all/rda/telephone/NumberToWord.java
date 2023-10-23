@@ -48,7 +48,6 @@ public class NumberToWord {
         int[] integers = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
             integers[i] = Integer.parseInt(String.valueOf(numbers[i]));
-
         }
 
         generateNumberToCharMap();
@@ -87,7 +86,5 @@ public class NumberToWord {
         }
         return stringList;
     }
-
-
 
 }

@@ -26,7 +26,6 @@ public class CommissionEmployee extends Employee {
             "Commission rate must be > 0.0 and < 1.0");
       }
 
-
       this.grossSales = grossSales;
       this.commissionRate = commissionRate;
    } 

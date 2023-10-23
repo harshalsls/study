@@ -53,7 +53,7 @@ public class NumberToWord {
         generateNumberToCharMap();
         List<String> stringList = printWords(integers, integers.length, 0, "");
 
-        stringList.stream().forEach(System.out::println);
+        stringList.forEach(System.out::println);
 
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(phoneNumber+".txt"))) {
             stringList.forEach(string -> {

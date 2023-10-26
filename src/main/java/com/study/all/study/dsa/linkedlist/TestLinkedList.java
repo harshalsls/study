@@ -2,17 +2,28 @@ package com.study.all.study.dsa.linkedlist;
 
 public class TestLinkedList {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        list.addLast(10);
-        list.addLast(20);
-        list.addLast(30);
-        list.addFirst(40);
-        list.deleteFirst();
-        list.deleteLast();
+        MyLinkedList list = new MyLinkedList();
 
-        Boolean doesContains = list.contains(40);
-        System.out.println(doesContains);
-        System.out.println(list.indexOf(20));
+        list.addAtHead(7);
+        printList(list);
+        list.addAtHead(2);
+        printList(list);
+        list.addAtHead(1);
+        printList(list);
+        list.addAtIndex(3,0);
+
+        printList(list);
+
+
 
     }
+
+    public static void printList(MyLinkedList list) {
+        MyLinkedList temp = list.head;
+        while (temp != null) {
+            System.out.print("-> "+temp.val);
+            temp = temp.next;
+        }
+    }
+
 }

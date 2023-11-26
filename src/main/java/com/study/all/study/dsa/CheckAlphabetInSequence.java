@@ -15,7 +15,6 @@ public class CheckAlphabetInSequence {
                 System.out.println("Failed Sequence " + alphabets[i] +" and " + alphabets[i+1]);
                 return false;
             }
-
         }
         return true;
     }

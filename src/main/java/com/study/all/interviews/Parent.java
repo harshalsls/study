@@ -1,4 +1,4 @@
-package com.interviews;
+package com.study.all.interviews;
 
 public class Parent extends Test implements First, Second {
 

@@ -1,4 +1,4 @@
-package com.interviews;
+package com.study.all.interviews;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

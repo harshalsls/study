@@ -28,8 +28,6 @@ public class MyLinkedList {
         }
 
         return temp.val;
-
-
     }
 
     public void addAtHead(int val) {

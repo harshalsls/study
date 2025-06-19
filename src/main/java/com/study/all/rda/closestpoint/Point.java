@@ -1,4 +1,4 @@
-package com.study.all.rda.plane;
+package com.study.all.rda.closestpoint;
 
 import java.util.Arrays;
 import java.util.Comparator;
